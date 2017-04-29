@@ -45,16 +45,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Page1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Page1.Designer.cs">
+      <DependentUpon>Page1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewPersonage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPersonage.Designer.cs">
+      <DependentUpon>NewPersonage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Page1.resx">
+      <DependentUpon>Page1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPersonage.resx">
+      <DependentUpon>NewPersonage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,6 +98,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ToDo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WoWToDo.BLL\WoWToDo.BLL.csproj">
+      <Project>{c8077c84-3f2a-4b77-b97f-8ff956867a26}</Project>
+      <Name>WoWToDo.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WoWToDo.Common\WoWToDo.Common.csproj">
+      <Project>{7bc0e36d-da85-4fce-8e12-6c104f06cd17}</Project>
+      <Name>WoWToDo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WoWToDo.DAL\WoWToDo.DAL.csproj">
+      <Project>{50d85ba3-b7a1-44a7-9811-df5a0cb63601}</Project>
+      <Name>WoWToDo.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WoWToDo.Infrastructure\WoWToDo.Infrastructure.csproj">
+      <Project>{9c42d5b1-7252-43f9-a562-fd6e419c4387}</Project>
+      <Name>WoWToDo.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
