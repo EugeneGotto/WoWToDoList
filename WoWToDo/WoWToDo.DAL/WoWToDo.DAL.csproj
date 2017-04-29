@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>50d85ba3-b7a1-44a7-9811-df5a0cb63601</ProjectGuid>
+    <ProjectGuid>{50D85BA3-B7A1-44A7-9811-DF5A0CB63601}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WoWToDo.DAL</RootNamespace>
@@ -30,24 +30,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AvailableDailyTasksRepository.cs" />
+    <Compile Include="AvailableWeeklyTasksRepository.cs" />
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="Interfaces\IAvailableDailyTasksRepository.cs" />
+    <Compile Include="Interfaces\IAvailableWeeklyTasksRepository.cs" />
+    <Compile Include="Interfaces\IPersonageRepository.cs" />
+    <Compile Include="Interfaces\ITaskListRepository.cs" />
+    <Compile Include="PersonageRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskListRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WoWToDo.Common\WoWToDo.Common.csproj">
+      <Project>{7bc0e36d-da85-4fce-8e12-6c104f06cd17}</Project>
+      <Name>WoWToDo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WoWToDo.Infrastructure\WoWToDo.Infrastructure.csproj">
+      <Project>{9c42d5b1-7252-43f9-a562-fd6e419c4387}</Project>
+      <Name>WoWToDo.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

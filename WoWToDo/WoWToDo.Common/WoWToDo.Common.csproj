@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Personage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskToDo.cs" />
+    <Compile Include="TaskList.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WoWToDo.Infrastructure\WoWToDo.Infrastructure.csproj">

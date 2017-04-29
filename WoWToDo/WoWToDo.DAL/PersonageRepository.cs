@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WoWToDo.Common;
 using WoWToDo.Infrastructure;
-using WoWToDo.Infrastructure.Interfaces;
 
 namespace WoWToDo.DAL
 {
@@ -13,7 +9,7 @@ namespace WoWToDo.DAL
     {
         public Personage GetByName(string name)
         {
-            var allPersonages = this.GetAll();
+            var allPersonages = this.GetAll() ?? new List<Personage>();
             var result = allPersonages.FirstOrDefault(p => p.Name == name);
             return result ?? (new Personage() {Name = name, Class = GameClass.Druid, Level = 1});
         }

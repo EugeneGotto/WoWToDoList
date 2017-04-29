@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace WoWToDo.Infrastructure.Interfaces
 {
-    public interface ITaskList
+    public interface ITaskToDo
     {
-        IPersonage Personage { get; set; }
-        IEnumerable<ITaskToDo> Daily { get; set; }
-        IEnumerable<ITaskToDo> Weekly { get; set; }
+        string TaskName { get; set; }
+        bool IsChecked { get; set; }
     }
 }

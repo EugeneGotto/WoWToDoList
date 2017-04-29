@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WoWToDo.Common;
 using WoWToDo.Infrastructure;
 
@@ -12,7 +9,7 @@ namespace WoWToDo.DAL
     {
         public TaskList GetByPersName(string name)
         {
-            var allTasks = this.GetAll();
+            var allTasks = this.GetAll() ?? new List<TaskList>();
             var result = allTasks.FirstOrDefault(t => t.Personage.Name == name);
             return result ??
                    new TaskList()

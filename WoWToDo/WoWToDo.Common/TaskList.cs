@@ -11,8 +11,8 @@ namespace WoWToDo.Common
     public class TaskList : ITaskList
     {
         private IPersonage _pers;
-        private IEnumerable<string> _daily;
-        private IEnumerable<string> _weekly;
+        private IEnumerable<ITaskToDo> _daily;
+        private IEnumerable<ITaskToDo> _weekly;
 
         public TaskList()
         {
@@ -25,16 +25,16 @@ namespace WoWToDo.Common
             set {_pers = value ?? new Personage(); }
         }
 
-        public IEnumerable<string> Daily
+        public IEnumerable<ITaskToDo> Daily
         {
-            get { return _daily ?? new List<string>(); }
-            set { _daily = value ?? new List<string>(); }
+            get { return _daily; }
+            set { _daily = value; }
         }
 
-        public IEnumerable<string> Weekly
+        public IEnumerable<ITaskToDo> Weekly
         {
-            get { return _weekly ?? new List<string>(); }
-            set { _weekly = value ?? new List<string>(); }
+            get { return _weekly; }
+            set { _weekly = value; }
         }
     }
 }
