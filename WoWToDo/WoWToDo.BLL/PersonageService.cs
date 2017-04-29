@@ -20,6 +20,12 @@ namespace WoWToDo.BLL
             repo.LoadPers(pers);
         }
 
+        public void AddNewPersonage(Personage pers)
+        {
+            var repo = new PersonageRepository();
+            repo.LoadPers(pers);
+        }
+
         public void ChangeLevel(string name, int level)
         {
             var repo = new PersonageRepository();
