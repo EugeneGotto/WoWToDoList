@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using WoWToDo.Common;
+using WoWToDo.DAL.Interfaces;
 using WoWToDo.Infrastructure;
 
 namespace WoWToDo.DAL

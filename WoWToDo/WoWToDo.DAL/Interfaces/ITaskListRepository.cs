@@ -1,7 +1,7 @@
 ﻿using WoWToDo.Common;
 using WoWToDo.Infrastructure.Interfaces;
 
-namespace WoWToDo.DAL
+namespace WoWToDo.DAL.Interfaces
 {
     public interface ITaskListRepository : IRepository<TaskList>
     {

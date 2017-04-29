@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\IPersonageService.cs" />
     <Compile Include="Interfaces\ITaskListService.cs" />
+    <Compile Include="TaskListService.cs" />
     <Compile Include="PersonageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
