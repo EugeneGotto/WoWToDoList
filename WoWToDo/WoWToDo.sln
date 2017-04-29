@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoWToDo.BLL", "WoWToDo.BLL\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoWToDo.Infrastructure", "WoWToDo.Infrastructure\WoWToDo.Infrastructure.csproj", "{9C42D5B1-7252-43F9-A562-FD6E419C4387}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoWToDo.Common", "WoWToDo.Common\WoWToDo.Common.csproj", "{7BC0E36D-DA85-4FCE-8E12-6C104F06CD17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9C42D5B1-7252-43F9-A562-FD6E419C4387}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C42D5B1-7252-43F9-A562-FD6E419C4387}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C42D5B1-7252-43F9-A562-FD6E419C4387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BC0E36D-DA85-4FCE-8E12-6C104F06CD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC0E36D-DA85-4FCE-8E12-6C104F06CD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC0E36D-DA85-4FCE-8E12-6C104F06CD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC0E36D-DA85-4FCE-8E12-6C104F06CD17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
