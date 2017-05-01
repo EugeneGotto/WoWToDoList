@@ -17,27 +17,39 @@ namespace WoWToDo
         public Form1()
         {
             InitializeComponent();
-            Personages.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            var repo = new PersonageRepository();
-            var persList = repo.GetAll();
-            foreach (var personage in persList)
-            {
-                Personages.Items.Add(personage.Name);
-            }
-
-            Personages.SelectedIndex = 0;
-        }
-
-        private void Personages_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void NewPersonage_Click(object sender, EventArgs e)
         {
             var newPers = new Newpersonage();
             newPers.ShowDialog();
+        }
+
+        private void NewToDo_Click(object sender, EventArgs e)
+        {
+            var newTask = new NewTask();
+            newTask.ShowDialog();
+        }
+
+        private void UpdatePersLevel_Click(object sender, EventArgs e)
+        {
+            var updatePers = new UpdatePersonage();
+            updatePers.SetPage(1);
+            updatePers.ShowDialog();
+        }
+
+        private void UpdatePersName_Click(object sender, EventArgs e)
+        {
+            var updatePers = new UpdatePersonage();
+            updatePers.SetPage(2);
+            updatePers.ShowDialog();
+        }
+
+        private void UpdatePersClass_Click(object sender, EventArgs e)
+        {
+            var updatePers = new UpdatePersonage();
+            updatePers.SetPage(3);
+            updatePers.ShowDialog();
         }
     }
 }

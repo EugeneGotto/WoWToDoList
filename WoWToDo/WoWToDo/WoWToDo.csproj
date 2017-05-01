@@ -45,11 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Page1.cs">
+    <Compile Include="Controls\UpdatePers_Class.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Page1.Designer.cs">
-      <DependentUpon>Page1.cs</DependentUpon>
+    <Compile Include="Controls\UpdatePers_Class.Designer.cs">
+      <DependentUpon>UpdatePers_Class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UpdatePers_Level.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UpdatePers_Level.Designer.cs">
+      <DependentUpon>UpdatePers_Level.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UpdatePers_Name.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UpdatePers_Name.Designer.cs">
+      <DependentUpon>UpdatePers_Name.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -63,16 +75,37 @@
     <Compile Include="NewPersonage.Designer.cs">
       <DependentUpon>NewPersonage.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTask.Designer.cs">
+      <DependentUpon>NewTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\Page1.resx">
-      <DependentUpon>Page1.cs</DependentUpon>
+    <Compile Include="UpdatePersonage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePersonage.Designer.cs">
+      <DependentUpon>UpdatePersonage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\UpdatePers_Class.resx">
+      <DependentUpon>UpdatePers_Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UpdatePers_Level.resx">
+      <DependentUpon>UpdatePers_Level.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UpdatePers_Name.resx">
+      <DependentUpon>UpdatePers_Name.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewPersonage.resx">
       <DependentUpon>NewPersonage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewTask.resx">
+      <DependentUpon>NewTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +116,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UpdatePersonage.resx">
+      <DependentUpon>UpdatePersonage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
