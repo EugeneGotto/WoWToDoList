@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WoWToDo.Infrastructure;
 using WoWToDo.Infrastructure.Interfaces;
 
 namespace WoWToDo.Common
@@ -15,5 +16,6 @@ namespace WoWToDo.Common
 
         public string TaskName { get { return _task ?? string.Empty; } set { _task = value ?? "NoTask"; } }
         public bool IsChecked { get { return _isChecked; } set { _isChecked = value; } }
+        public TaskType TaskType { get; set; }
     }
 }

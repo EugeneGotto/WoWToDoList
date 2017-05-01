@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WoWToDo.Infrastructure;
 using WoWToDo.Infrastructure.Interfaces;
 
 namespace WoWToDo.Common
@@ -11,8 +12,7 @@ namespace WoWToDo.Common
     public class TaskList : ITaskList
     {
         private IPersonage _pers;
-        private IEnumerable<ITaskToDo> _daily;
-        private IEnumerable<ITaskToDo> _weekly;
+        private Dictionary<TaskType, IEnumerable<ITaskToDo>> _taskList;
 
         public TaskList()
         {
@@ -27,14 +27,22 @@ namespace WoWToDo.Common
 
         public IEnumerable<ITaskToDo> Daily
         {
-            get { return _daily; }
-            set { _daily = value; }
+            get { return _taskList[TaskType.Daily]; }
+            set
+            {
+                if (value == null) return;
+                _taskList[TaskType.Daily] = value;
+            }
         }
 
         public IEnumerable<ITaskToDo> Weekly
         {
-            get { return _weekly; }
-            set { _weekly = value; }
+            get { return _taskList[TaskType.Weekly]; }
+            set
+            {
+                if (value == null) return;
+                _taskList[TaskType.Weekly] = value;
+            }
         }
     }
 }

@@ -40,11 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AvailableDailyTasksRepository.cs" />
-    <Compile Include="AvailableWeeklyTasksRepository.cs" />
+    <Compile Include="AvailableTasksRepository.cs" />
     <Compile Include="BaseRepository.cs" />
-    <Compile Include="Interfaces\IAvailableDailyTasksRepository.cs" />
-    <Compile Include="Interfaces\IAvailableWeeklyTasksRepository.cs" />
+    <Compile Include="Interfaces\IAvailableTasksRepository.cs" />
     <Compile Include="Interfaces\IPersonageRepository.cs" />
     <Compile Include="Interfaces\ITaskListRepository.cs" />
     <Compile Include="PersonageRepository.cs" />

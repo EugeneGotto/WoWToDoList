@@ -8,6 +8,7 @@ namespace WoWToDo.Infrastructure.Interfaces
 {
     public interface ITaskToDo
     {
+        TaskType TaskType { get; set; }
         string TaskName { get; set; }
         bool IsChecked { get; set; }
     }

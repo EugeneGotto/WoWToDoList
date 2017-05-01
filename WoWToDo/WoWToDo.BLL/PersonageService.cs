@@ -38,6 +38,7 @@ namespace WoWToDo.BLL
         {
             var repo = new PersonageRepository();
             var changedPers = repo.GetByName(oldName);
+            repo.DeletePers(changedPers);
             changedPers.Name = newName;
             repo.LoadPers(changedPers);
         }

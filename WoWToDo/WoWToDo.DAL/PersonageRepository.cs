@@ -30,12 +30,5 @@ namespace WoWToDo.DAL
             allPersonages.Remove(pers);
             return this.LoadAll(allPersonages);
         }
-
-        public void LoadDirect(Personage pers)
-        {
-            var loadedList = new List<Personage>();
-            loadedList.Add(pers);
-            this.LoadAll(loadedList);
-        }
     }
 }

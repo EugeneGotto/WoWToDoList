@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WoWToDo.Common;
+using WoWToDo.Infrastructure;
 using WoWToDo.Infrastructure.Interfaces;
 
 namespace WoWToDo.DAL.Interfaces
 {
-    public interface IAvailableDailyTasksRepository : IRepository<TaskToDo>
+    public interface IAvailableTasksRepository : IRepository<TaskToDo>
     {
-        bool AddNewTask(TaskToDo task);
-        bool RenameTask(string oldName, string newName);
-        bool RemoveTask(TaskToDo task);
+        IEnumerable<ITaskToDo> GetByType(TaskType taskType);
+        void DeleteTask(TaskToDo task);
     }
 }

@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AvailableTasksService.cs" />
+    <Compile Include="Interfaces\IAvailableTasksService.cs" />
     <Compile Include="Interfaces\IPersonageService.cs" />
     <Compile Include="Interfaces\ITaskListService.cs" />
     <Compile Include="TaskListService.cs" />
