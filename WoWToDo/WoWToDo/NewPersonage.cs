@@ -19,6 +19,7 @@ namespace WoWToDo
         {
             InitializeComponent();
             Class.DropDownStyle = ComboBoxStyle.DropDownList;
+            
             Class.Items.Add(GameClass.Death_Knight);
             Class.Items.Add(GameClass.Demon_Hunter);
             Class.Items.Add(GameClass.Druid);

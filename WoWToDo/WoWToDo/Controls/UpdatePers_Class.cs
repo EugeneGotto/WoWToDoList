@@ -27,6 +27,21 @@ namespace WoWToDo.Controls
             }
 
             NameComboBox.SelectedIndex = 0;
+
+            ClassComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ClassComboBox.Items.Add(GameClass.Death_Knight);
+            ClassComboBox.Items.Add(GameClass.Demon_Hunter);
+            ClassComboBox.Items.Add(GameClass.Druid);
+            ClassComboBox.Items.Add(GameClass.Hunter);
+            ClassComboBox.Items.Add(GameClass.Mage);
+            ClassComboBox.Items.Add(GameClass.Monk);
+            ClassComboBox.Items.Add(GameClass.Paladin);
+            ClassComboBox.Items.Add(GameClass.Priest);
+            ClassComboBox.Items.Add(GameClass.Rogue);
+            ClassComboBox.Items.Add(GameClass.Shaman);
+            ClassComboBox.Items.Add(GameClass.Warlock);
+            ClassComboBox.Items.Add(GameClass.Warrior);
+            ClassComboBox.SelectedIndex = 0;
         }
 
         private void UpdateClass_Click(object sender, EventArgs e)

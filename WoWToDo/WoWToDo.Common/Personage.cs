@@ -24,5 +24,13 @@ namespace WoWToDo.Common
         public string Name { get { return _name ?? "NoName"; } set { _name = string.IsNullOrEmpty(value) ? "NoName" : value; } }
         public int Level { get { return _level; } set { _level = value <= 110 && value > 0 ? value : 1; } }
         public GameClass Class { get { return _class; } set { _class = value; }}
+
+        public override bool Equals(Object obj)
+        {
+            var pers = (Personage) obj;
+            if (this.Name == pers.Name && this.Level == pers.Level && this.Class == pers.Class)
+                return true;
+            return false;
+        }
     }
 }

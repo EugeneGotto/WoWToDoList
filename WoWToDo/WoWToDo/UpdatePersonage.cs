@@ -16,6 +16,7 @@ namespace WoWToDo
         //page == 1 - Update Level
         //page == 2 - Update Name
         //page == 3 - Update Class
+        //page == 4 - Update All
         public void SetPage(int page)
         {
             switch (page)
@@ -28,6 +29,9 @@ namespace WoWToDo
                     break;
                 case 3:
                     pnMain.Controls.Add(new UpdatePers_Class());
+                    break;
+                case 4:
+                    pnMain.Controls.Add(new UpdatePers_All());
                     break;
                 default:
                     pnMain.Controls.Add(new UpdatePers_Level());

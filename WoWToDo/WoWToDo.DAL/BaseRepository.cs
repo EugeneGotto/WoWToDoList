@@ -21,20 +21,28 @@ namespace WoWToDo.DAL
                 this.LoadAll(new List<TModel>());
             }
 
-            var fileStream = File.Open($"../../Data/{_fileName}.xml", FileMode.OpenOrCreate);
-            var serializer = new XmlSerializer(typeof(List<TModel>));
-            var result = (List<TModel>)serializer.Deserialize(fileStream);
-            fileStream.Close();
+            List<TModel> result;
+            using (var fileStream = File.Open($"../../Data/{_fileName}.xml", FileMode.OpenOrCreate))
+            {
+                var serializer = new XmlSerializer(typeof(List<TModel>));
+                result = (List<TModel>)serializer.Deserialize(fileStream);
+                fileStream.Close();
+            }
+
             return result;
         }
 
         public bool LoadAll(IEnumerable<TModel> models)
         {
             if (models == null) return false;
-            var fileStream = File.Open($"../../Data/{_fileName}.xml", FileMode.OpenOrCreate);
-            var serializer = new XmlSerializer(typeof(List<TModel>));
-            serializer.Serialize(fileStream, models);
-            fileStream.Close();
+            File.Delete($"../../Data/{_fileName}.xml");
+            using (var fileStream = File.Open($"../../Data/{_fileName}.xml", FileMode.OpenOrCreate))
+            {
+                var serializer = new XmlSerializer(typeof(List<TModel>));
+                serializer.Serialize(fileStream, models);
+                fileStream.Close();
+            }
+            
             return true;
         }
     }

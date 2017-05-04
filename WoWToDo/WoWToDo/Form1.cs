@@ -51,5 +51,12 @@ namespace WoWToDo
             updatePers.SetPage(3);
             updatePers.ShowDialog();
         }
+
+        private void полностьюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var updatePers = new UpdatePersonage();
+            updatePers.SetPage(4);
+            updatePers.ShowDialog();
+        }
     }
 }

@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\UpdatePers_All.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UpdatePers_All.Designer.cs">
+      <DependentUpon>UpdatePers_All.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UpdatePers_Class.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="UpdatePersonage.Designer.cs">
       <DependentUpon>UpdatePersonage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\UpdatePers_All.resx">
+      <DependentUpon>UpdatePers_All.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UpdatePers_Class.resx">
       <DependentUpon>UpdatePers_Class.cs</DependentUpon>
     </EmbeddedResource>

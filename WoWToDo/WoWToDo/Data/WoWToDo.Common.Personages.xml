@@ -1,18 +1,13 @@
 <?xml version="1.0"?>
 <ArrayOfPersonage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Personage>
-    <Name>Димира</Name>
-    <Level>110</Level>
-    <Class>Hunter</Class>
-  </Personage>
-  <Personage>
     <Name>Саис</Name>
-    <Level>100</Level>
+    <Level>110</Level>
     <Class>Druid</Class>
   </Personage>
   <Personage>
-    <Name>Саин</Name>
-    <Level>110</Level>
-    <Class>Hunter</Class>
+    <Name>Симатра</Name>
+    <Level>100</Level>
+    <Class>Warlock</Class>
   </Personage>
 </ArrayOfPersonage>

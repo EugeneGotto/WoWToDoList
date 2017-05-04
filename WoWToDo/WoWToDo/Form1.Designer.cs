@@ -43,6 +43,7 @@ namespace WoWToDo
             this.UpdatePersClass = new System.Windows.Forms.ToolStripMenuItem();
             this.UpdateTask = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.полностьюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,6 +108,7 @@ namespace WoWToDo
             // UpdatePers
             // 
             this.UpdatePers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.полностьюToolStripMenuItem,
             this.UpdatePersLevel,
             this.UpdatePersName,
             this.UpdatePersClass});
@@ -148,6 +150,13 @@ namespace WoWToDo
             this.panel1.Size = new System.Drawing.Size(259, 221);
             this.panel1.TabIndex = 1;
             // 
+            // полностьюToolStripMenuItem
+            // 
+            this.полностьюToolStripMenuItem.Name = "полностьюToolStripMenuItem";
+            this.полностьюToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.полностьюToolStripMenuItem.Text = "Полностью";
+            this.полностьюToolStripMenuItem.Click += new System.EventHandler(this.полностьюToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +189,7 @@ namespace WoWToDo
         private ToolStripMenuItem UpdatePersName;
         private ToolStripMenuItem UpdatePersClass;
         private ToolStripMenuItem UpdateTask;
+        private ToolStripMenuItem полностьюToolStripMenuItem;
     }
 }
 
