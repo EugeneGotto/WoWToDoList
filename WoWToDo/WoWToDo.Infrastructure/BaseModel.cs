@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WoWToDo.Infrastructure
 {
-    public enum TaskType
+    public abstract class BaseModel
     {
-        Daily,
-        Weekly
+        public int Id { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

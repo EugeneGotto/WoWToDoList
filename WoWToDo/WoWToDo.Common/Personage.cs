@@ -9,28 +9,32 @@ using WoWToDo.Infrastructure.Interfaces;
 
 namespace WoWToDo.Common
 {
-    [Serializable]
-    public class Personage : IPersonage
+    public class Personage : BaseModel
     {
-        private string _name;
-        private int _level;
-        private GameClass _class;
-
-        public Personage()
-        {
-            
-        }
-
-        public string Name { get { return _name ?? "NoName"; } set { _name = string.IsNullOrEmpty(value) ? "NoName" : value; } }
-        public int Level { get { return _level; } set { _level = value <= 110 && value > 0 ? value : 1; } }
-        public GameClass Class { get { return _class; } set { _class = value; }}
+        public string Name { get; set; }
+        public int Level { get; set; }
+        public int GameClassId { get; set; }
+        public IEnumerable<TaskToDo> DailyTasks { get; set; }
+        public IEnumerable<TaskToDo> WeeklyTasks { get; set; }
 
         public override bool Equals(Object obj)
         {
             var pers = (Personage) obj;
-            if (this.Name == pers.Name && this.Level == pers.Level && this.Class == pers.Class)
+            if (this.Name == pers.Name && this.Level == pers.Level && this.GameClassId == pers.GameClassId)
                 return true;
             return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode() | Name.GetHashCode() | 
+                Level.GetHashCode() | GameClassId.GetHashCode() | 
+                DailyTasks.GetHashCode() | WeeklyTasks.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} Level={Level}";
         }
     }
 }

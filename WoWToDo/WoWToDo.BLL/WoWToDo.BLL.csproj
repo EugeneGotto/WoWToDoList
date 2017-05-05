@@ -40,12 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AvailableTasksService.cs" />
-    <Compile Include="Interfaces\IAvailableTasksService.cs" />
-    <Compile Include="Interfaces\IPersonageService.cs" />
-    <Compile Include="Interfaces\ITaskListService.cs" />
-    <Compile Include="TaskListService.cs" />
-    <Compile Include="PersonageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +55,9 @@
       <Project>{9c42d5b1-7252-43f9-a562-fd6e419c4387}</Project>
       <Name>WoWToDo.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,14 +8,11 @@ using WoWToDo.Infrastructure.Interfaces;
 
 namespace WoWToDo.Common
 {
-    [Serializable]
-    public class TaskToDo : ITaskToDo
+    public class TaskToDo : BaseModel
     {
-        private string _task;
-        private bool _isChecked = false;
-
-        public string TaskName { get { return _task ?? string.Empty; } set { _task = value ?? "NoTask"; } }
-        public bool IsChecked { get { return _isChecked; } set { _isChecked = value; } }
-        public TaskType TaskType { get; set; }
+        public string TaskName { get; set; }
+        public bool IsChecked { get; set; }
+        public IEnumerable<TaskToDo> DailyTasks { get; set; }
+        public IEnumerable<TaskToDo> WeeklyTasks { get; set; }
     }
 }
