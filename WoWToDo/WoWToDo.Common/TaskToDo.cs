@@ -12,7 +12,7 @@ namespace WoWToDo.Common
     {
         public string TaskName { get; set; }
         public bool IsChecked { get; set; }
-        public IEnumerable<TaskToDo> DailyTasks { get; set; }
-        public IEnumerable<TaskToDo> WeeklyTasks { get; set; }
+        public ICollection<DailyTask> DailyTasks { get; set; }
+        public ICollection<WeeklyTask> WeeklyTasks { get; set; }
     }
 }

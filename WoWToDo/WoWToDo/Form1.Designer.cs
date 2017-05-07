@@ -38,12 +38,8 @@ namespace WoWToDo
             this.NewToDo = new System.Windows.Forms.ToolStripMenuItem();
             this.Update = new System.Windows.Forms.ToolStripMenuItem();
             this.UpdatePers = new System.Windows.Forms.ToolStripMenuItem();
-            this.UpdatePersLevel = new System.Windows.Forms.ToolStripMenuItem();
-            this.UpdatePersName = new System.Windows.Forms.ToolStripMenuItem();
-            this.UpdatePersClass = new System.Windows.Forms.ToolStripMenuItem();
             this.UpdateTask = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.полностьюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,41 +103,17 @@ namespace WoWToDo
             // 
             // UpdatePers
             // 
-            this.UpdatePers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.полностьюToolStripMenuItem,
-            this.UpdatePersLevel,
-            this.UpdatePersName,
-            this.UpdatePersClass});
             this.UpdatePers.Name = "UpdatePers";
-            this.UpdatePers.Size = new System.Drawing.Size(152, 22);
+            this.UpdatePers.Size = new System.Drawing.Size(156, 22);
             this.UpdatePers.Text = "Персонаж";
-            // 
-            // UpdatePersLevel
-            // 
-            this.UpdatePersLevel.Name = "UpdatePersLevel";
-            this.UpdatePersLevel.Size = new System.Drawing.Size(152, 22);
-            this.UpdatePersLevel.Text = "Уровень";
-            this.UpdatePersLevel.Click += new System.EventHandler(this.UpdatePersLevel_Click);
-            // 
-            // UpdatePersName
-            // 
-            this.UpdatePersName.Name = "UpdatePersName";
-            this.UpdatePersName.Size = new System.Drawing.Size(152, 22);
-            this.UpdatePersName.Text = "Имя";
-            this.UpdatePersName.Click += new System.EventHandler(this.UpdatePersName_Click);
-            // 
-            // UpdatePersClass
-            // 
-            this.UpdatePersClass.Name = "UpdatePersClass";
-            this.UpdatePersClass.Size = new System.Drawing.Size(152, 22);
-            this.UpdatePersClass.Text = "Класс";
-            this.UpdatePersClass.Click += new System.EventHandler(this.UpdatePersClass_Click);
+            this.UpdatePers.Click += new System.EventHandler(this.UpdatePers_Click);
             // 
             // UpdateTask
             // 
             this.UpdateTask.Name = "UpdateTask";
-            this.UpdateTask.Size = new System.Drawing.Size(152, 22);
+            this.UpdateTask.Size = new System.Drawing.Size(156, 22);
             this.UpdateTask.Text = "\"Дело\"";
+            this.UpdateTask.Click += new System.EventHandler(this.UpdateTask_Click);
             // 
             // panel1
             // 
@@ -149,13 +121,6 @@ namespace WoWToDo
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(259, 221);
             this.panel1.TabIndex = 1;
-            // 
-            // полностьюToolStripMenuItem
-            // 
-            this.полностьюToolStripMenuItem.Name = "полностьюToolStripMenuItem";
-            this.полностьюToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.полностьюToolStripMenuItem.Text = "Полностью";
-            this.полностьюToolStripMenuItem.Click += new System.EventHandler(this.полностьюToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -185,11 +150,7 @@ namespace WoWToDo
         private ToolStripMenuItem NewToDo;
         private ToolStripMenuItem Update;
         private ToolStripMenuItem UpdatePers;
-        private ToolStripMenuItem UpdatePersLevel;
-        private ToolStripMenuItem UpdatePersName;
-        private ToolStripMenuItem UpdatePersClass;
         private ToolStripMenuItem UpdateTask;
-        private ToolStripMenuItem полностьюToolStripMenuItem;
     }
 }
 

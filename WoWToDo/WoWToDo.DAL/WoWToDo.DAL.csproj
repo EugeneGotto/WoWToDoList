@@ -63,12 +63,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="DailyTaskRepository.cs" />
+    <Compile Include="GameClassRepository.cs" />
     <Compile Include="Migrations\201705050626035_FirstInitializeNewDatabase.cs" />
     <Compile Include="Migrations\201705050626035_FirstInitializeNewDatabase.Designer.cs">
       <DependentUpon>201705050626035_FirstInitializeNewDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705062117558_UpdateRelationships.cs" />
+    <Compile Include="Migrations\201705062117558_UpdateRelationships.Designer.cs">
+      <DependentUpon>201705062117558_UpdateRelationships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705062121423_UpdateRelationships_2.cs" />
+    <Compile Include="Migrations\201705062121423_UpdateRelationships_2.Designer.cs">
+      <DependentUpon>201705062121423_UpdateRelationships_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PersonageRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskToDoRepository.cs" />
+    <Compile Include="WeeklyTaskRepository.cs" />
     <Compile Include="WowContext.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +104,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705050626035_FirstInitializeNewDatabase.resx">
       <DependentUpon>201705050626035_FirstInitializeNewDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705062117558_UpdateRelationships.resx">
+      <DependentUpon>201705062117558_UpdateRelationships.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705062121423_UpdateRelationships_2.resx">
+      <DependentUpon>201705062121423_UpdateRelationships_2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -1,48 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Entity;
 using System.Windows.Forms;
-using WoWToDo.BLL;
 using WoWToDo.Common;
 using WoWToDo.DAL;
-using WoWToDo.Infrastructure;
 
 namespace WoWToDo
 {
     public partial class NewTask : Form
     {
-        public NewTask()
+        private DbContext _dbContext;
+
+        public NewTask(DbContext context)
         {
             InitializeComponent();
 
-            TypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            TypeComboBox.Items.Add("Ежедневное");
-            TypeComboBox.Items.Add("Еженедельное");
-            TypeComboBox.SelectedIndex = 0;
+            _dbContext = context;
         }
 
         private void AddNewTask_Click(object sender, EventArgs e)
         {
-            var newTask = new TaskToDo();
-            newTask.TaskName = TaskName.Text;
-            newTask.IsChecked = false;
-            if (TypeComboBox.SelectedIndex == 0)
+            var newTask = new TaskToDo
             {
-                newTask.TaskType = TaskType.Daily;
-                var service = new AvailableTasksService();
-                service.AddNewTask(newTask);
-            }
+                TaskName = TaskName.Text,
+                IsChecked = false
+            };
 
-            else
+            using (var repo = new TaskToDoRepository(_dbContext))
             {
-                newTask.TaskType = TaskType.Weekly;
-                var service = new AvailableTasksService();
-                service.AddNewTask(newTask);
+                repo.AddOrUpdate(newTask);
+                repo.SaveChanges();
             }
             
             this.Close();

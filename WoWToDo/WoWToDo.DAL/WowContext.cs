@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Net.Mime;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using WoWToDo.Common;
-using WoWToDo.DAL.Migrations;
 
 namespace WoWToDo.DAL
 {
@@ -16,8 +8,8 @@ namespace WoWToDo.DAL
         public WowContext() : base("TasksConnection")
         {
             
-            AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
-            Database.SetInitializer(new CreateDatabaseIfNotExists<WowContext>());
+            //AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
+            //Database.SetInitializer(new CreateDatabaseIfNotExists<WowContext>());
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<WowContext, Configuration>());
         }
 

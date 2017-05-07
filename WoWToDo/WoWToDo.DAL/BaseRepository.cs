@@ -106,10 +106,10 @@ namespace WoWToDo.DAL
                 throw new ArgumentNullException(nameof(model));
             }
 
-            // if the model exists in Db then we have to update it
-            var originalModel = GetById(model.Id);
-            if (originalModel != null)
+            // if the pers exists in Db then we have to update it
+            if (model.Id != 0)
             {
+                var originalModel = this.GetById(model.Id);
                 Update(originalModel, model);
                 _stateChanged = true;
             }
@@ -165,7 +165,7 @@ namespace WoWToDo.DAL
             {
                 if (disposing)
                 {
-                    _dbContext?.Dispose();
+                    //_dbContext?.Dispose();
                     _disposed = true;
                 }
             }

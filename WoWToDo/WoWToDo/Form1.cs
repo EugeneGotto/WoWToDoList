@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Entity;
 using System.Windows.Forms;
 using WoWToDo.DAL;
-using WoWToDo.Infrastructure;
 
 namespace WoWToDo
 {
     public partial class Form1 : Form
     {
+        private readonly DbContext _myContext = new WowContext();
         public Form1()
         {
             InitializeComponent();
@@ -21,42 +15,26 @@ namespace WoWToDo
 
         private void NewPersonage_Click(object sender, EventArgs e)
         {
-            var newPers = new Newpersonage();
+            var newPers = new Newpersonage(_myContext);
             newPers.ShowDialog();
         }
 
         private void NewToDo_Click(object sender, EventArgs e)
         {
-            var newTask = new NewTask();
+            var newTask = new NewTask(_myContext);
             newTask.ShowDialog();
         }
 
-        private void UpdatePersLevel_Click(object sender, EventArgs e)
+        private void UpdatePers_Click(object sender, EventArgs e)
         {
-            var updatePers = new UpdatePersonage();
-            updatePers.SetPage(1);
+            var updatePers = new UpdatePersonage(_myContext);
             updatePers.ShowDialog();
         }
 
-        private void UpdatePersName_Click(object sender, EventArgs e)
+        private void UpdateTask_Click(object sender, EventArgs e)
         {
-            var updatePers = new UpdatePersonage();
-            updatePers.SetPage(2);
-            updatePers.ShowDialog();
-        }
-
-        private void UpdatePersClass_Click(object sender, EventArgs e)
-        {
-            var updatePers = new UpdatePersonage();
-            updatePers.SetPage(3);
-            updatePers.ShowDialog();
-        }
-
-        private void полностьюToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var updatePers = new UpdatePersonage();
-            updatePers.SetPage(4);
-            updatePers.ShowDialog();
+            var updateTask = new UpdateTask(_myContext);
+            updateTask.ShowDialog();
         }
     }
 }

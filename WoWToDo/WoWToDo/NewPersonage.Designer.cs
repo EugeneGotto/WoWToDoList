@@ -114,7 +114,6 @@ namespace WoWToDo
             this.Controls.Add(this.Addnewpers);
             this.Name = "Newpersonage";
             this.Text = "Новый Персонаж";
-            this.Load += new System.EventHandler(this.Newpersonage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

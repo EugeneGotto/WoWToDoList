@@ -1,54 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WoWToDo.BLL;
 using WoWToDo.Common;
-using WoWToDo.Infrastructure;
+using WoWToDo.DAL;
 
 namespace WoWToDo
 {
     public partial class Newpersonage : Form
     {
-        public Newpersonage()
+        private DbContext _dbContext;
+
+        public Newpersonage(DbContext context)
         {
             InitializeComponent();
+
+            _dbContext = context;
             Class.DropDownStyle = ComboBoxStyle.DropDownList;
-            
-            Class.Items.Add(GameClass.Death_Knight);
-            Class.Items.Add(GameClass.Demon_Hunter);
-            Class.Items.Add(GameClass.Druid);
-            Class.Items.Add(GameClass.Hunter);
-            Class.Items.Add(GameClass.Mage);
-            Class.Items.Add(GameClass.Monk);
-            Class.Items.Add(GameClass.Paladin);
-            Class.Items.Add(GameClass.Priest);
-            Class.Items.Add(GameClass.Rogue);
-            Class.Items.Add(GameClass.Shaman);
-            Class.Items.Add(GameClass.Warlock);
-            Class.Items.Add(GameClass.Warrior);
-            Class.SelectedIndex = 0;
+            using (var repo = new GameClassRepository(_dbContext))
+            {
+                var classes = repo.GetAll().Select(c => c.NameRu);
+                Class.Items.AddRange(classes.ToArray());
+            }
+            //Class.SelectedIndex = 0;
         }
 
         private void Addnewpers_Click(object sender, EventArgs e)
         {
-            var persService = new PersonageService();
             string name = NameTextBox.Text;
-            int level = Int32.Parse(Level.Text);
-            GameClass gameClass = (GameClass) Class.SelectedItem;
+            int level = int.Parse(Level.Text);
+            int gameClassId = Class.SelectedIndex + 1;
             var pers = new Personage()
             {
-                Class = gameClass,
+                GameClassId = gameClassId,
                 Level = level,
                 Name = name
             };
 
-            persService.AddNewPersonage(pers);
+            using (var repo = new PersonageRepository(_dbContext))
+            {
+                repo.AddOrUpdate(pers);
+                repo.SaveChanges();
+            }
+            
             this.Close();
         }
 
@@ -73,11 +67,6 @@ namespace WoWToDo
                     Level.Focus();
                 return;
             }
-        }
-
-        private void Newpersonage_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
