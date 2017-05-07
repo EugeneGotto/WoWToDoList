@@ -40,8 +40,12 @@ namespace WoWToDo
                     var row = new DataGridViewRow();
                     DataGridViewCell nameCell = new DataGridViewTextBoxCell();
                     DataGridViewCell checkCell = new DataGridViewCheckBoxCell();
-                    nameCell.Value = dailyTask.TaskToDo.TaskName;
-                    checkCell.Value = dailyTask.TaskToDo.IsChecked;
+                    using (var taskRepo = new TaskToDoRepository(_dbContext))
+                    {
+                        nameCell.Value = taskRepo.GetById(dailyTask.TaskToDoId).TaskName;
+                    }
+
+                    checkCell.Value = dailyTask.IsChecked;
                     row.Cells.AddRange(nameCell, checkCell);
                     dataGridDaily.Rows.Add(row);
                 }
@@ -58,7 +62,7 @@ namespace WoWToDo
                     DataGridViewCell nameCell = new DataGridViewTextBoxCell();
                     DataGridViewCell checkCell = new DataGridViewCheckBoxCell();
                     nameCell.Value = weeklyTask.TaskToDo.TaskName;
-                    checkCell.Value = weeklyTask.TaskToDo.IsChecked;
+                    checkCell.Value = weeklyTask.IsChecked;
                     row.Cells.AddRange(nameCell, checkCell);
                     dataGridWeekly.Rows.Add(row);
                 }
@@ -69,7 +73,10 @@ namespace WoWToDo
 
         private void buttonAddNewDaily_Click(object sender, EventArgs e)
         {
-            
+            var addNewTask = new AddNewTask(_dbContext, _currentPers);
+            addNewTask.SetPage(1);
+            addNewTask.ShowDialog();
+            this.UpdateTable();
         }
     }
 }

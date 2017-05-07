@@ -67,6 +67,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewTask.Designer.cs">
+      <DependentUpon>AddNewTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AddNewDailyTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddNewDailyTask.Designer.cs">
+      <DependentUpon>AddNewDailyTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +117,12 @@
     <Compile Include="UpdateTask.Designer.cs">
       <DependentUpon>UpdateTask.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewTask.resx">
+      <DependentUpon>AddNewTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AddNewDailyTask.resx">
+      <DependentUpon>AddNewDailyTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,7 +199,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

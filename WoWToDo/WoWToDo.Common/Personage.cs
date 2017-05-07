@@ -11,11 +11,17 @@ namespace WoWToDo.Common
 {
     public class Personage : BaseModel
     {
+        public Personage()
+        {
+            DailyTasks = new List<TaskToDo>();
+            WeeklyTasks = new List<TaskToDo>();
+        }
+
         public string Name { get; set; }
         public int Level { get; set; }
         public int GameClassId { get; set; }
-        public IEnumerable<TaskToDo> DailyTasks { get; set; }
-        public IEnumerable<TaskToDo> WeeklyTasks { get; set; }
+        public ICollection<TaskToDo> DailyTasks { get; set; }
+        public ICollection<TaskToDo> WeeklyTasks { get; set; }
 
         public override bool Equals(Object obj)
         {

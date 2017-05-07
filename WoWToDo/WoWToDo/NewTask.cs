@@ -21,8 +21,7 @@ namespace WoWToDo
         {
             var newTask = new TaskToDo
             {
-                TaskName = TaskName.Text,
-                IsChecked = false
+                TaskName = TaskName.Text
             };
 
             using (var repo = new TaskToDoRepository(_dbContext))

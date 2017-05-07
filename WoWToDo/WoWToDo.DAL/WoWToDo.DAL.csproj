@@ -77,6 +77,14 @@
     <Compile Include="Migrations\201705062121423_UpdateRelationships_2.Designer.cs">
       <DependentUpon>201705062121423_UpdateRelationships_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705072001292_FixedPersonageCollections.cs" />
+    <Compile Include="Migrations\201705072001292_FixedPersonageCollections.Designer.cs">
+      <DependentUpon>201705072001292_FixedPersonageCollections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705072041583_FixedDailyAndWeeklyState.cs" />
+    <Compile Include="Migrations\201705072041583_FixedDailyAndWeeklyState.Designer.cs">
+      <DependentUpon>201705072041583_FixedDailyAndWeeklyState.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonageRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +118,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705062121423_UpdateRelationships_2.resx">
       <DependentUpon>201705062121423_UpdateRelationships_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705072001292_FixedPersonageCollections.resx">
+      <DependentUpon>201705072001292_FixedPersonageCollections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705072041583_FixedDailyAndWeeklyState.resx">
+      <DependentUpon>201705072041583_FixedDailyAndWeeklyState.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

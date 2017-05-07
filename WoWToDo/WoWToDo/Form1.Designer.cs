@@ -39,7 +39,9 @@ namespace WoWToDo
             this.Update = new System.Windows.Forms.ToolStripMenuItem();
             this.UpdatePers = new System.Windows.Forms.ToolStripMenuItem();
             this.UpdateTask = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxPersonage = new System.Windows.Forms.ComboBox();
+            this.labelPersName = new System.Windows.Forms.Label();
+            this.buttonLoad = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@ namespace WoWToDo
             this.NewPersonage,
             this.NewToDo});
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             // 
             // NewPersonage
@@ -98,36 +100,58 @@ namespace WoWToDo
             this.UpdatePers,
             this.UpdateTask});
             this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(152, 22);
+            this.Update.Size = new System.Drawing.Size(128, 22);
             this.Update.Text = "Обновить";
             // 
             // UpdatePers
             // 
             this.UpdatePers.Name = "UpdatePers";
-            this.UpdatePers.Size = new System.Drawing.Size(156, 22);
+            this.UpdatePers.Size = new System.Drawing.Size(131, 22);
             this.UpdatePers.Text = "Персонаж";
             this.UpdatePers.Click += new System.EventHandler(this.UpdatePers_Click);
             // 
             // UpdateTask
             // 
             this.UpdateTask.Name = "UpdateTask";
-            this.UpdateTask.Size = new System.Drawing.Size(156, 22);
+            this.UpdateTask.Size = new System.Drawing.Size(131, 22);
             this.UpdateTask.Text = "\"Дело\"";
             this.UpdateTask.Click += new System.EventHandler(this.UpdateTask_Click);
             // 
-            // panel1
+            // comboBoxPersonage
             // 
-            this.panel1.Location = new System.Drawing.Point(13, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 221);
-            this.panel1.TabIndex = 1;
+            this.comboBoxPersonage.FormattingEnabled = true;
+            this.comboBoxPersonage.Location = new System.Drawing.Point(134, 27);
+            this.comboBoxPersonage.Name = "comboBoxPersonage";
+            this.comboBoxPersonage.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPersonage.TabIndex = 1;
+            // 
+            // labelPersName
+            // 
+            this.labelPersName.AutoSize = true;
+            this.labelPersName.Location = new System.Drawing.Point(12, 30);
+            this.labelPersName.Name = "labelPersName";
+            this.labelPersName.Size = new System.Drawing.Size(116, 13);
+            this.labelPersName.TabIndex = 2;
+            this.labelPersName.Text = "Выберите персонажа";
+            // 
+            // buttonLoad
+            // 
+            this.buttonLoad.Location = new System.Drawing.Point(90, 54);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(75, 23);
+            this.buttonLoad.TabIndex = 3;
+            this.buttonLoad.Text = "Загрузить";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.buttonLoad);
+            this.Controls.Add(this.labelPersName);
+            this.Controls.Add(this.comboBoxPersonage);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -146,11 +170,13 @@ namespace WoWToDo
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NewPersonage;
-        private Panel panel1;
         private ToolStripMenuItem NewToDo;
         private ToolStripMenuItem Update;
         private ToolStripMenuItem UpdatePers;
         private ToolStripMenuItem UpdateTask;
+        private ComboBox comboBoxPersonage;
+        private Label labelPersName;
+        private Button buttonLoad;
     }
 }
 
