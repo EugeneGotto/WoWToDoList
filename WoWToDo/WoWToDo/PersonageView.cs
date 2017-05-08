@@ -86,5 +86,55 @@ namespace WoWToDo
             addNewTask.ShowDialog();
             this.UpdateTable();
         }
+
+        private void buttonSaveDaily_Click(object sender, EventArgs e)
+        {
+            using (var dailyRepo = new DailyTaskRepository(_dbContext))
+            {
+                var checkedList = new List<bool>();
+                for (int i = 0; i < dataGridDaily.RowCount; i++)
+                {
+                    checkedList.Add((bool)dataGridDaily.Rows[i].Cells[1].Value);
+                }
+
+                var dailyTasks = dailyRepo.GetAll().Where(d => d.PersonageId == _currentPers.Id).ToArray();
+                for (int i = 0; i < dailyTasks.Count(); i++)
+                {
+                    dailyTasks[i].IsChecked = checkedList[i];
+                }
+
+                foreach (var dailyTask in dailyTasks)
+                {
+                    dailyRepo.AddOrUpdate(dailyTask);
+                }
+
+                dailyRepo.SaveChanges();
+            }
+        }
+
+        private void buttonSaveWeekly_Click(object sender, EventArgs e)
+        {
+            using (var weeklyRepo = new WeeklyTaskRepository(_dbContext))
+            {
+                var checkedList = new List<bool>();
+                for (int i = 0; i < dataGridWeekly.RowCount; i++)
+                {
+                    checkedList.Add((bool)dataGridWeekly.Rows[i].Cells[1].Value);
+                }
+
+                var weeklyTasks = weeklyRepo.GetAll().Where(d => d.PersonageId == _currentPers.Id).ToArray();
+                for (int i = 0; i < weeklyTasks.Count(); i++)
+                {
+                    weeklyTasks[i].IsChecked = checkedList[i];
+                }
+
+                foreach (var weeklyTask in weeklyTasks)
+                {
+                    weeklyRepo.AddOrUpdate(weeklyTask);
+                }
+
+                weeklyRepo.SaveChanges();
+            }
+        }
     }
 }
