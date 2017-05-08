@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Windows.Forms;
 using WoWToDo.Common;
+using WoWToDo.Controls;
 using WoWToDo.DAL;
 
 namespace WoWToDo
@@ -17,29 +18,21 @@ namespace WoWToDo
             _dbContext = context;
         }
 
-        private void AddNewTask_Click(object sender, EventArgs e)
+        //1 - Simple Task
+        //2 - Global Task
+        public void SetPage(int page)
         {
-            var newTask = new TaskToDo
+            switch (page)
             {
-                TaskName = TaskName.Text
-            };
-
-            using (var repo = new TaskToDoRepository(_dbContext))
-            {
-                repo.AddOrUpdate(newTask);
-                repo.SaveChanges();
-            }
-            
-            this.Close();
-        }
-
-        private void TaskName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsControl(e.KeyChar))
-            {
-                if (e.KeyChar == (char)Keys.Tab || e.KeyChar == (char)Keys.Enter)
-                    AddNewTask.Focus();
-                return;
+                case 1:
+                    panel1.Controls.Add(new NewTaskSimple(_dbContext));
+                    break;
+                case 2:
+                    panel1.Controls.Add(new NewTaskGlobal(_dbContext));
+                    break;
+                default:
+                    panel1.Controls.Add(new NewTaskSimple(_dbContext));
+                    break;
             }
         }
     }

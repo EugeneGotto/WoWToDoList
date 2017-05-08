@@ -18,5 +18,6 @@ namespace WoWToDo.DAL
         public DbSet<TaskToDo> TaskToDos { get; set; }
         public DbSet<DailyTask> DailyTasks { get; set; }
         public DbSet<WeeklyTask> WeeklyTasks { get; set; }
+        public DbSet<GlobalTask> GlobalTasks { get; set; }
     }
 }

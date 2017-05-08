@@ -65,6 +65,7 @@
     <Compile Include="BaseRepository.cs" />
     <Compile Include="DailyTaskRepository.cs" />
     <Compile Include="GameClassRepository.cs" />
+    <Compile Include="GlobalTaskRepository.cs" />
     <Compile Include="Migrations\201705050626035_FirstInitializeNewDatabase.cs" />
     <Compile Include="Migrations\201705050626035_FirstInitializeNewDatabase.Designer.cs">
       <DependentUpon>201705050626035_FirstInitializeNewDatabase.cs</DependentUpon>
@@ -84,6 +85,10 @@
     <Compile Include="Migrations\201705072041583_FixedDailyAndWeeklyState.cs" />
     <Compile Include="Migrations\201705072041583_FixedDailyAndWeeklyState.Designer.cs">
       <DependentUpon>201705072041583_FixedDailyAndWeeklyState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705081901191_AddedNewTableGlobalTasks.cs" />
+    <Compile Include="Migrations\201705081901191_AddedNewTableGlobalTasks.Designer.cs">
+      <DependentUpon>201705081901191_AddedNewTableGlobalTasks.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonageRepository.cs" />
@@ -124,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705072041583_FixedDailyAndWeeklyState.resx">
       <DependentUpon>201705072041583_FixedDailyAndWeeklyState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705081901191_AddedNewTableGlobalTasks.resx">
+      <DependentUpon>201705081901191_AddedNewTableGlobalTasks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

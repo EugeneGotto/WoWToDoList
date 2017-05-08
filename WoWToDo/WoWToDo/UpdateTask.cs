@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WoWToDo.Controls;
 using WoWToDo.DAL;
 
 namespace WoWToDo
@@ -15,47 +16,30 @@ namespace WoWToDo
     public partial class UpdateTask : Form
     {
         private DbContext _dbContext;
+
         public UpdateTask(DbContext context)
         {
             InitializeComponent();
 
             _dbContext = context;
-            comboBoxTask.DropDownStyle = ComboBoxStyle.DropDownList;
-            using (var repo = new TaskToDoRepository(_dbContext))
-            {
-                var tasks = repo.GetAll().Select(t => t.TaskName).ToArray();
-                comboBoxTask.Items.AddRange(tasks);
-            }
-
-            comboBoxTask.SelectedIndex = 0;
         }
 
-        private void textBoxNewName_KeyPress(object sender, KeyPressEventArgs e)
+        //1 - Simple Task
+        //2 - Global Task
+        public void SetPage(int page)
         {
-            if (Char.IsControl(e.KeyChar))
+            switch (page)
             {
-                if (e.KeyChar == (char)Keys.Tab || e.KeyChar == (char)Keys.Enter)
-                    buttonUpdate.Focus();
-                return;
+                case 1:
+                    panel1.Controls.Add(new UpdateTaskSimple(_dbContext));
+                    break;
+                case 2:
+                    panel1.Controls.Add(new UpdateTaskGlobal(_dbContext));
+                    break;
+                default:
+                    panel1.Controls.Add(new UpdateTaskSimple(_dbContext));
+                    break;
             }
-        }
-
-        private void comboBoxTask_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textBoxNewName.Text = comboBoxTask.SelectedItem.ToString();
-        }
-
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-            using (var repo = new TaskToDoRepository(_dbContext))
-            {
-                var task = repo.GetById(comboBoxTask.SelectedIndex + 1);
-                task.TaskName = textBoxNewName.Text;
-                repo.AddOrUpdate(task);
-                repo.SaveChanges();
-            }
-
-            this.Close();
         }
     }
 }
