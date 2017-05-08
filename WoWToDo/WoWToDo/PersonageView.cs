@@ -92,7 +92,7 @@ namespace WoWToDo
             using (var dailyRepo = new DailyTaskRepository(_dbContext))
             {
                 var checkedList = new List<bool>();
-                for (int i = 0; i < dataGridDaily.RowCount; i++)
+                for (int i = 0; i < dataGridDaily.RowCount - 1; i++)
                 {
                     checkedList.Add((bool)dataGridDaily.Rows[i].Cells[1].Value);
                 }
@@ -117,7 +117,7 @@ namespace WoWToDo
             using (var weeklyRepo = new WeeklyTaskRepository(_dbContext))
             {
                 var checkedList = new List<bool>();
-                for (int i = 0; i < dataGridWeekly.RowCount; i++)
+                for (int i = 0; i < dataGridWeekly.RowCount - 1; i++)
                 {
                     checkedList.Add((bool)dataGridWeekly.Rows[i].Cells[1].Value);
                 }
