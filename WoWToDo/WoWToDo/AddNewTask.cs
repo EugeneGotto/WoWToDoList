@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using System.Windows.Forms;
 using WoWToDo.Common;
 using WoWToDo.Controls;
@@ -27,12 +19,16 @@ namespace WoWToDo
         }
 
         //1 - DailyTask
+        //2 - WeeklyTask
         public void SetPage(int page)
         {
             switch (page)
             {
                 case 1:
                     panel1.Controls.Add(new AddNewDailyTask(_dbContext, _currentPersonage));
+                    break;
+                case 2:
+                    panel1.Controls.Add(new AddNEwWeeklyTask(_dbContext, _currentPersonage));
                     break;
                 default:
                     panel1.Controls.Add(new AddNewDailyTask(_dbContext, _currentPersonage));

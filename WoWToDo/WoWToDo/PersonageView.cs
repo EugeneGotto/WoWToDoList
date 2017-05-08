@@ -78,5 +78,13 @@ namespace WoWToDo
             addNewTask.ShowDialog();
             this.UpdateTable();
         }
+
+        private void buttonAddNewWeekly_Click(object sender, EventArgs e)
+        {
+            var addNewTask = new AddNewTask(_dbContext, _currentPers);
+            addNewTask.SetPage(2);
+            addNewTask.ShowDialog();
+            this.UpdateTable();
+        }
     }
 }

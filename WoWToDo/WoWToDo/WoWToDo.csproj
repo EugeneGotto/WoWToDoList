@@ -79,6 +79,12 @@
     <Compile Include="Controls\AddNewDailyTask.Designer.cs">
       <DependentUpon>AddNewDailyTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AddNewWeeklyTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddNewWeeklyTask.Designer.cs">
+      <DependentUpon>AddNewWeeklyTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AddNewDailyTask.resx">
       <DependentUpon>AddNewDailyTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AddNEwWeeklyTask.resx">
+      <DependentUpon>AddNewWeeklyTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
