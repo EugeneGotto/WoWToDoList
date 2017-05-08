@@ -42,6 +42,7 @@ namespace WoWToDo
             var newTask = new NewTask(_myContext);
             newTask.SetPage(2);
             newTask.ShowDialog();
+            this.UpdateTable();
         }
 
         private void UpdatePers_Click(object sender, EventArgs e)
@@ -62,6 +63,7 @@ namespace WoWToDo
             var updateTask = new UpdateTask(_myContext);
             updateTask.SetPage(2);
             updateTask.ShowDialog();
+            this.UpdateTable();
         }
 
         private void buttonLoad_Click(object sender, EventArgs e)
@@ -82,6 +84,12 @@ namespace WoWToDo
                 for (int i = 0; i < dataGridViewGlobal.RowCount - 1; i++)
                 {
                     checkedList.Add((bool)dataGridViewGlobal.Rows[i].Cells[1].Value);
+                }
+
+                if (checkedList.Count == 0)
+                {
+                    this.UpdateTable();
+                    return;
                 }
 
                 var globalTasks = repo.GetAll().ToArray();
