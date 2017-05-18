@@ -90,6 +90,10 @@
     <Compile Include="Migrations\201705081901191_AddedNewTableGlobalTasks.Designer.cs">
       <DependentUpon>201705081901191_AddedNewTableGlobalTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705082311516_AddedRGBinGameClasses.cs" />
+    <Compile Include="Migrations\201705082311516_AddedRGBinGameClasses.Designer.cs">
+      <DependentUpon>201705082311516_AddedRGBinGameClasses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonageRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705081901191_AddedNewTableGlobalTasks.resx">
       <DependentUpon>201705081901191_AddedNewTableGlobalTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705082311516_AddedRGBinGameClasses.resx">
+      <DependentUpon>201705082311516_AddedRGBinGameClasses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

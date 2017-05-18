@@ -35,18 +35,113 @@ namespace WoWToDo.DAL.Migrations
         {
             if (!context.Set<GameClass>().Any())
             {
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Warrior", NameRu = "Воин" });
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Paladin", NameRu = "Паладин" });
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Hunter", NameRu = "Охотник" });
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Rogue", NameRu = "Разбойник" });
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Priest", NameRu = "Жрец" });
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Death Knight", NameRu = "Рыцарь смерти" });
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Shaman", NameRu = "Шаман" });
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Mage", NameRu = "Маг" });
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Warlock", NameRu = "Чернокнижник" });
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Monk", NameRu = "Монах" });
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Druid", NameRu = "Друид" });
-                context.Set<GameClass>().AddOrUpdate(new GameClass() { Name = "Demon Hunter", NameRu = "Охотник на демонов" });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass()
+                    {
+                        Name = "Warrior",
+                        NameRu = "Воин",
+                        Red = 198,
+                        Green = 155,
+                        Blue = 109
+                    });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass()
+                    {
+                        Name = "Paladin",
+                        NameRu = "Паладин",
+                        Red = 244,
+                        Green = 140,
+                        Blue = 186
+                    });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass()
+                    {
+                        Name = "Hunter",
+                        NameRu = "Охотник",
+                        Red = 170,
+                        Green = 211,
+                        Blue = 114
+                    });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass()
+                    {
+                        Name = "Rogue",
+                        NameRu = "Разбойник",
+                        Red = 255,
+                        Green = 244,
+                        Blue = 104
+                    });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass()
+                    {
+                        Name = "Priest",
+                        NameRu = "Жрец",
+                        Red = 240,
+                        Green = 235,
+                        Blue = 224
+                    });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass()
+                    {
+                        Name = "Death Knight",
+                        NameRu = "Рыцарь смерти",
+                        Red = 196,
+                        Green = 30,
+                        Blue = 59
+                    });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass()
+                    {
+                        Name = "Shaman",
+                        NameRu = "Шаман",
+                        Red = 35,
+                        Green = 89,
+                        Blue = 255
+                    });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass()
+                    {
+                        Name = "Mage",
+                        NameRu = "Маг",
+                        Red = 104,
+                        Green = 204,
+                        Blue = 239
+                    });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass()
+                    {
+                        Name = "Warlock",
+                        NameRu = "Чернокнижник",
+                        Red = 147,
+                        Green = 130,
+                        Blue = 201
+                    });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass() {
+                        Name = "Monk",
+                        NameRu = "Монах",
+                        Red = 0,
+                        Green = 255,
+                        Blue = 186
+                    });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass()
+                    {
+                        Name = "Druid",
+                        NameRu = "Друид",
+                        Red = 255,
+                        Green = 124,
+                        Blue = 10
+                    });
+                context.Set<GameClass>()
+                    .AddOrUpdate(new GameClass()
+                    {
+                        Name = "Demon Hunter",
+                        NameRu = "Охотник на демонов",
+                        Red = 164,
+                        Green = 48,
+                        Blue = 201
+                    });
             }
         }
     }

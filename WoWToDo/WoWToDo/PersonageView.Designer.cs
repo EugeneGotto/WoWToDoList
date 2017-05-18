@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPageWeekly = new System.Windows.Forms.TabPage();
-            this.dataGridWeekly = new System.Windows.Forms.DataGridView();
-            this.WeeklyIsDone = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.WeeklyTaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonAddNewWeekly = new System.Windows.Forms.Button();
             this.buttonSaveWeekly = new System.Windows.Forms.Button();
+            this.buttonAddNewWeekly = new System.Windows.Forms.Button();
+            this.dataGridWeekly = new System.Windows.Forms.DataGridView();
+            this.WeeklyTaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeeklyIsDone = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPageDaily = new System.Windows.Forms.TabPage();
-            this.dataGridDaily = new System.Windows.Forms.DataGridView();
-            this.DailyIsDone = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DailyTaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonAddNewDaily = new System.Windows.Forms.Button();
             this.buttonSaveDaily = new System.Windows.Forms.Button();
+            this.buttonAddNewDaily = new System.Windows.Forms.Button();
+            this.dataGridDaily = new System.Windows.Forms.DataGridView();
+            this.DailyTaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DailyIsDone = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageWeekly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridWeekly)).BeginInit();
@@ -63,31 +63,15 @@
             this.tabPageWeekly.Text = "Еженедельки";
             this.tabPageWeekly.UseVisualStyleBackColor = true;
             // 
-            // dataGridWeekly
+            // buttonSaveWeekly
             // 
-            this.dataGridWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridWeekly.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.WeeklyTaskName,
-            this.WeeklyIsDone});
-            this.dataGridWeekly.Location = new System.Drawing.Point(6, 6);
-            this.dataGridWeekly.Name = "dataGridWeekly";
-            this.dataGridWeekly.Size = new System.Drawing.Size(516, 383);
-            this.dataGridWeekly.TabIndex = 1;
-            // 
-            // WeeklyIsDone
-            // 
-            this.WeeklyIsDone.HeaderText = "Сделано";
-            this.WeeklyIsDone.Name = "WeeklyIsDone";
-            this.WeeklyIsDone.Width = 70;
-            // 
-            // WeeklyTaskName
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.WeeklyTaskName.DefaultCellStyle = dataGridViewCellStyle1;
-            this.WeeklyTaskName.HeaderText = "Задачи на неделю:";
-            this.WeeklyTaskName.Name = "WeeklyTaskName";
-            this.WeeklyTaskName.ReadOnly = true;
-            this.WeeklyTaskName.Width = 400;
+            this.buttonSaveWeekly.Location = new System.Drawing.Point(446, 396);
+            this.buttonSaveWeekly.Name = "buttonSaveWeekly";
+            this.buttonSaveWeekly.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaveWeekly.TabIndex = 3;
+            this.buttonSaveWeekly.Text = "Сохранить";
+            this.buttonSaveWeekly.UseVisualStyleBackColor = true;
+            this.buttonSaveWeekly.Click += new System.EventHandler(this.buttonSaveWeekly_Click);
             // 
             // buttonAddNewWeekly
             // 
@@ -99,15 +83,31 @@
             this.buttonAddNewWeekly.UseVisualStyleBackColor = true;
             this.buttonAddNewWeekly.Click += new System.EventHandler(this.buttonAddNewWeekly_Click);
             // 
-            // buttonSaveWeekly
+            // dataGridWeekly
             // 
-            this.buttonSaveWeekly.Location = new System.Drawing.Point(446, 396);
-            this.buttonSaveWeekly.Name = "buttonSaveWeekly";
-            this.buttonSaveWeekly.Size = new System.Drawing.Size(75, 23);
-            this.buttonSaveWeekly.TabIndex = 3;
-            this.buttonSaveWeekly.Text = "Сохранить";
-            this.buttonSaveWeekly.UseVisualStyleBackColor = true;
-            this.buttonSaveWeekly.Click += new System.EventHandler(this.buttonSaveWeekly_Click);
+            this.dataGridWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridWeekly.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.WeeklyTaskName,
+            this.WeeklyIsDone});
+            this.dataGridWeekly.Location = new System.Drawing.Point(6, 6);
+            this.dataGridWeekly.Name = "dataGridWeekly";
+            this.dataGridWeekly.Size = new System.Drawing.Size(516, 383);
+            this.dataGridWeekly.TabIndex = 1;
+            // 
+            // WeeklyTaskName
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.WeeklyTaskName.DefaultCellStyle = dataGridViewCellStyle5;
+            this.WeeklyTaskName.HeaderText = "Задачи на неделю:";
+            this.WeeklyTaskName.Name = "WeeklyTaskName";
+            this.WeeklyTaskName.ReadOnly = true;
+            this.WeeklyTaskName.Width = 400;
+            // 
+            // WeeklyIsDone
+            // 
+            this.WeeklyIsDone.HeaderText = "Сделано";
+            this.WeeklyIsDone.Name = "WeeklyIsDone";
+            this.WeeklyIsDone.Width = 70;
             // 
             // tabPageDaily
             // 
@@ -122,31 +122,15 @@
             this.tabPageDaily.Text = "Ежедневки";
             this.tabPageDaily.UseVisualStyleBackColor = true;
             // 
-            // dataGridDaily
+            // buttonSaveDaily
             // 
-            this.dataGridDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDaily.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DailyTaskName,
-            this.DailyIsDone});
-            this.dataGridDaily.Location = new System.Drawing.Point(6, 6);
-            this.dataGridDaily.Name = "dataGridDaily";
-            this.dataGridDaily.Size = new System.Drawing.Size(516, 383);
-            this.dataGridDaily.TabIndex = 0;
-            // 
-            // DailyIsDone
-            // 
-            this.DailyIsDone.HeaderText = "Сделано";
-            this.DailyIsDone.Name = "DailyIsDone";
-            this.DailyIsDone.Width = 70;
-            // 
-            // DailyTaskName
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DailyTaskName.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DailyTaskName.HeaderText = "Задачи на сегодня:";
-            this.DailyTaskName.Name = "DailyTaskName";
-            this.DailyTaskName.ReadOnly = true;
-            this.DailyTaskName.Width = 400;
+            this.buttonSaveDaily.Location = new System.Drawing.Point(447, 396);
+            this.buttonSaveDaily.Name = "buttonSaveDaily";
+            this.buttonSaveDaily.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaveDaily.TabIndex = 2;
+            this.buttonSaveDaily.Text = "Сохранить";
+            this.buttonSaveDaily.UseVisualStyleBackColor = true;
+            this.buttonSaveDaily.Click += new System.EventHandler(this.buttonSaveDaily_Click);
             // 
             // buttonAddNewDaily
             // 
@@ -158,15 +142,31 @@
             this.buttonAddNewDaily.UseVisualStyleBackColor = true;
             this.buttonAddNewDaily.Click += new System.EventHandler(this.buttonAddNewDaily_Click);
             // 
-            // buttonSaveDaily
+            // dataGridDaily
             // 
-            this.buttonSaveDaily.Location = new System.Drawing.Point(447, 396);
-            this.buttonSaveDaily.Name = "buttonSaveDaily";
-            this.buttonSaveDaily.Size = new System.Drawing.Size(75, 23);
-            this.buttonSaveDaily.TabIndex = 2;
-            this.buttonSaveDaily.Text = "Сохранить";
-            this.buttonSaveDaily.UseVisualStyleBackColor = true;
-            this.buttonSaveDaily.Click += new System.EventHandler(this.buttonSaveDaily_Click);
+            this.dataGridDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDaily.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DailyTaskName,
+            this.DailyIsDone});
+            this.dataGridDaily.Location = new System.Drawing.Point(6, 6);
+            this.dataGridDaily.Name = "dataGridDaily";
+            this.dataGridDaily.Size = new System.Drawing.Size(516, 383);
+            this.dataGridDaily.TabIndex = 0;
+            // 
+            // DailyTaskName
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DailyTaskName.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DailyTaskName.HeaderText = "Задачи на сегодня:";
+            this.DailyTaskName.Name = "DailyTaskName";
+            this.DailyTaskName.ReadOnly = true;
+            this.DailyTaskName.Width = 400;
+            // 
+            // DailyIsDone
+            // 
+            this.DailyIsDone.HeaderText = "Сделано";
+            this.DailyIsDone.Name = "DailyIsDone";
+            this.DailyIsDone.Width = 70;
             // 
             // tabControl1
             // 

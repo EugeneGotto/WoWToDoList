@@ -11,6 +11,10 @@ namespace WoWToDo.Common
     {
         public string Name { get; set; }
         public string NameRu { get; set; }
+        public int Red { get; set; }
+        public int Green { get; set; }
+        public int Blue { get; set; }
+        public int[] Argb => new int[] {255, Red, Green, Blue};
         public byte[] Icon { get; set; }
     }
 }
